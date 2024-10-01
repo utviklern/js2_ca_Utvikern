@@ -1,0 +1,35 @@
+
+.post-card {
+    border: 1px solid #efebeb;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(35, 35, 35, 0.1);
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #fff;
+    max-width: 600px;
+}
+
+
+.post-card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+/* author/date */
+.post-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.post-card img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+}
+
+ ul {
+    list-style-type: none;
+}

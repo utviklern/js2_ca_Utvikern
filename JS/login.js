@@ -33,7 +33,7 @@ async function login(email, password) {
      
         localStorage.setItem('auth_token', token);//lagrer token i local storage
 
-       window.location.href = "/home"; //redirect til home hvis riktig
+       window.location.href = "../index.html"; //redirect til home hvis riktig
 
     } catch (error) {//ved error vil den kunne vise error, pluss en generell error class blir brukt
         document.getElementById('message').textContent = 'Login failed: ' + error.message;
