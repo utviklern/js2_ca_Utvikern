@@ -1,4 +1,5 @@
 import { API_KEY } from './consants.js';//importerer fra consatns.js
+
 async function fetchAllPosts() {
     const apiUrl = 'https://v2.api.noroff.dev/social/posts?_author=true'; //api med author i param
     const token = localStorage.getItem('auth_token'); //token fra local
@@ -48,6 +49,9 @@ function displayLast12Posts(posts) {
 
         const made = new Date(post.created).toLocaleString(); //viser når inlegget ble laget
 
+       
+        const readMoreId = `<a href="/single/index.html?id=${post.id}" class="read-more-btn">Read more</a>`;//read more specific ved hjelp av id
+
         //legger inn diverse info i html hentet over
         postItem.innerHTML = `
             <h3>${post.title}</h3>
@@ -55,6 +59,7 @@ function displayLast12Posts(posts) {
             <p><strong>Author:</strong> ${author}</p>
             <p><strong>Date:</strong> ${made}</p>
             <p>${post.body}</p>
+            ${readMoreId} 
         `;
         postsList.appendChild(postItem);
     });
