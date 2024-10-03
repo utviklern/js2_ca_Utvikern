@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register new user</title>
+    <link rel="stylesheet" href="/CSS/styles.css"> 
+    <script src="/JS/registrer.js" defer></script>
+</head>
+
+<body>
+
+    <div class="register-container">
+        <h2>Register a New User</h2>
+
+        <form id="registerForm">
+            <label for="name">Username:</label><br>
+            <input type="text" id="name" name="name" required placeholder="Enter your username">
+            <br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+            <br>
+
+            <label for="password">Password:</label>
+            <br>
+            <input type="password" id="password" name="password" required placeholder="Enter your password">
+            <br>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <p id="message"></p>
+
+    </div>
+</body>
+
+</html>

@@ -34,7 +34,7 @@
     list-style-type: none;
 }
 
-.read-more-btn {
+.read-more-btn, .register-btn {
     display: inline-block;
     padding: .5rem 1rem;
     color: white;
@@ -44,6 +44,6 @@
     margin-top: .5rem;
 }
 
-.read-more-btn:hover {
+.read-more-btn:hover, .register-btn {
     background-color: #6e9ed2;
 }
