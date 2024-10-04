@@ -32,6 +32,7 @@ async function login(email, password) {
 
      
         localStorage.setItem('auth_token', token);//lagrer token i local storage
+        localStorage.setItem('current_author', data.data.name);
 
        window.location.href = "../index.html"; //redirect til home hvis riktig
 
