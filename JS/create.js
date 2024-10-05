@@ -45,7 +45,7 @@ async function createPost(newPost) {
         document.getElementById('message').textContent = 'Post created successfully!'; // Suksessmelding
         document.getElementById('message').className = 'success'; // Setter klassen til success for styling
 
-        window.location.href = "/posts/index.html"; //redirecter til post ved suksess
+        window.location.href = "/post/"; //redirecter til post ved suksess
 
     } catch (error) { // feilhåndtering
         document.getElementById('message').textContent = 'Error: ' + error.message; //viser feilmelding ved feil
