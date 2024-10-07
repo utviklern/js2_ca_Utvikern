@@ -1,5 +1,14 @@
 import { API_KEY } from './consants.js'; //importerer fra constants.js
 
+/**
+ * fetcher innlegg fra api som er laget av den innloggede brukeren
+ * 
+ * @async
+ * @function fetchUserPosts
+ * @returns {Promise<Array>} returner en liste med innlegg fra den innloggede brukeren
+ * @throws {Error} viser feil hvis ikke ok
+ */
+
 async function fetchUserPosts() {
     const apiUrl = 'https://v2.api.noroff.dev/social/posts?_author=true'; //api med author i param
     const token = localStorage.getItem('auth_token'); //token fra local
@@ -30,6 +39,13 @@ async function fetchUserPosts() {
         return []; //ved feil får man tom array
     }
 }
+
+/**
+ * viser brukerens innlegg i dom
+ * 
+ * @function displayUserPosts
+ * @param {Array} posts listen med innlegg som skal vises
+ */
 
 function displayUserPosts(posts) { //funskjon for å vise inlegg
     const postsList = document.getElementById('posts-list'); //henter fra html
@@ -63,6 +79,13 @@ function displayUserPosts(posts) { //funskjon for å vise inlegg
         postsList.appendChild(postItem); //legger til li i ul
     });
 }
+/**
+ * samler funksjonene for å hente og vise brukerens innlegg
+ * 
+ * @async
+ * @function showUserPosts
+ * @returns {Promise<void>} kaller displayUserPosts for å vise innleggene i dom
+ */
 
 async function showUserPosts() { //samler funksjoene
     const posts = await fetchUserPosts(); //henter alle brukerens posts

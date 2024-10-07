@@ -7,7 +7,15 @@ export function idFromUrl() {// henter id fra url
     return urlParams.get('id'); //returnerer post ID
 }
 
-
+/**
+ * Henter specific via id hos api.
+ * 
+ * @async
+ * @function fetchPostById
+ * @param {string} postId id til post som skal hentes.
+ * @returns {Promise<Object|null>} returner json for post hvis ok eller null ved feil.
+ * @throws {Error} viser feil hvis ikke ok
+ */
 async function fetchPostById(postId) {//funksjonen for å hente specific post basert på id 
     const apiUrl = `https://v2.api.noroff.dev/social/posts/${postId}`; //henter specific post via id
     const token = localStorage.getItem('auth_token'); //henter token fra local
@@ -33,6 +41,14 @@ async function fetchPostById(postId) {//funksjonen for å hente specific post ba
     }
 }
 
+
+/**
+ * poster i form med data fra specific post basert på id.
+ * 
+ * @async
+ * @function addFormWithContent
+ * @returns {Promise<void>} populater form med post data
+ */
 // Funksjon for å fylle ut formet med eksisterende postdata
 async function addFormWithContent() {
     const postId = idFromUrl(); //henter post id fra urlen
@@ -52,7 +68,15 @@ async function addFormWithContent() {
     }
 }
 
-// Funksjon for å oppdatere post
+/**
+ * oppdaterer post basert på id hentet fra url
+ * 
+ * @async
+ * @function updatePost
+ * @param {Event} event form levering
+ * @returns {Promise<void>} redirect til post ved ok
+ * @throws {Error} Viser en feilmelding hvis ikke ok
+ */
 async function updatePost(event) {
     event.preventDefault(); //forhinderer standard form sending
 

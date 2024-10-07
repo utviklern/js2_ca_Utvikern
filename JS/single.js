@@ -1,11 +1,27 @@
 import { API_KEY } from './consants.js'; //importerer fra consatns.js
 
+
+/**
+ * henter post id via url param
+ * 
+ * @returns {string|null} post-id fra url eller null hvis ikke funnet
+ */
+
 function postIdFromUrl() {//for å hente id fra url
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     return urlParams.get('id'); //id´en
 }
 
+/**
+ * henter specific post via id fra api
+ * 
+ * @async
+ * @function getPostViaId
+ * @param {string} postId id'en til posten som skal hentes
+ * @returns {Promise<Object|null>} Postdata hvis ok, eller null ved feil
+ * @throws {Error} viser feil hvis hentingen ikke er ok
+ */
 
 async function getPostViaId(postId) {// henter specific post via id
     const apiUrl = `https://v2.api.noroff.dev/social/posts/${postId}?_author=true`; //api med param for spesifc post
@@ -34,6 +50,13 @@ async function getPostViaId(postId) {// henter specific post via id
     }
 }
 
+/**
+ * viser single post ved å hente posten basert på id fra url.
+ * 
+ * @async
+ * @function showSingle
+ * @returns {Promise<void>} populate html med content fra post hvis ok
+ */
 
 async function showSingle() {//funskjon for å vise single post
     const postId = postIdFromUrl();//henter id fra url

@@ -2,6 +2,15 @@ import { API_KEY } from './consants.js'; //importerer fra constants.js
 
 const apiCreate = 'https://v2.api.noroff.dev/social/posts'; //api for create
 
+/**
+ * lager ny post via api
+ * 
+ * @async
+ * @function createPost
+ * @param {Event} newPost  post event
+ * @returns {Promise<void>} redirect ved suksess
+ * @throws {Error} viser feil ved ikke ok 
+ */
 async function createPost(newPost) {
     newPost.preventDefault(); // preventer standard skjema sending
 

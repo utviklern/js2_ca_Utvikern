@@ -1,5 +1,13 @@
 import { API_KEY } from './consants.js';//importerer fra consatns.js
 
+/**
+ * henter alle innlegg fra api, med inkludert forfatter
+ * 
+ * @async
+ * @function fetchAllPosts
+ * @returns {Promise<Array>} returner en liste med de 12 siste innleggene, eller en tom liste ved feil
+ * @throws {Error} viser feil hvis hentingen mislykkes.
+ */
 async function fetchAllPosts() {
     const apiUrl = 'https://v2.api.noroff.dev/social/posts?_author=true'; //api med author i param
     const token = localStorage.getItem('auth_token'); //token fra local
@@ -32,6 +40,12 @@ async function fetchAllPosts() {
 
 
 
+/**
+ * Viser de siste 12 innleggene ved å legge de til i dom
+ * 
+ * @function displayLast12Posts
+ * @param {Array} posts liste med innlegg som skal vises.
+ */
 
 function displayLast12Posts(posts) {
     const postsList = document.getElementById('posts-list');//henter fra html

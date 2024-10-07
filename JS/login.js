@@ -1,8 +1,17 @@
 import { API_KEY } from './consants.js';//importerer fra consatns.js
 
-const loginRegex = /^[a-zA-Z0-9._%+-]+@(noroff\.no|stud\.noroff\.no)$/;// enkel regex for login
+const loginRegex = /^[a-zA-Z0-9._%+-]+@(noroff\.no|stud\.noroff\.no)$/;// enkel regex for login som bare tillater @noroff.no eller @stus.noroff.no
 
-
+/**
+ * logger inn ved å sende epost og passord til api
+ * 
+ * @async
+ * @function login
+ * @param {string} email epost til bruker
+ * @param {string} password  assordet til bruker
+ * @returns {Promise<void>} redirect bruker til home sucsess
+ * @throws {Error} viser feil hvis innlogging ikke ok
+ */
 async function login(email, password) {
     const loginApi = 'https://v2.api.noroff.dev/auth/login';// api for login
 

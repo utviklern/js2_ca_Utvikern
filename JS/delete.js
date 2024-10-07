@@ -1,6 +1,15 @@
 import { idFromUrl } from './edit.js'; //importerer fra edit.js
 import { API_KEY } from './consants.js'; //importerer fra constants.js
 
+/**
+ * delete post via id
+ * 
+ * @async
+ * @function deletePost
+ * @returns {Promise<void>} redirect ved suksess
+ * @throws {Error} viser feil hvis sletting mislykkes
+ */
+
 async function deletePost() {
     const postId = idFromUrl(); // henter post id fra url
     const apiUrl = `https://v2.api.noroff.dev/social/posts/${postId}`; // api for post

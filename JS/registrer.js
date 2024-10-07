@@ -1,5 +1,15 @@
 const apiRegister = 'https://v2.api.noroff.dev/auth/register'; //api for register
 
+/**
+ * registrerer ny bruker ved å spørre api
+ * 
+ * @async
+ * @function register
+ * @param {Event} userForm send form event
+ * @returns {Promise<void>} redirecter brukeren til innloggingssiden hvis registrering er sucsess
+ * @throws {Error} viser feil hvis registreringen ikke er ok
+ */
+
 async function register(userForm) {
     userForm.preventDefault(); // preventer standard skjemasending
 
@@ -39,12 +49,11 @@ async function register(userForm) {
             throw new Error(`Error: ${response.status} ${response.statusText}`); //feilmelding ved feil
         }
 
-        const data = await response.json(); //parser til json
 
 
         // console.log('register test', data); //debug
 
-        window.location.href = '/login/index.html'; //redirecter til login hvis riktig
+        window.location.href = '/login/'; //redirecter til login hvis riktig
         
     } catch (error) { //feilhåntering 
 
