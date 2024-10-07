@@ -47,3 +47,14 @@
 .read-more-btn:hover, .register-btn {
     background-color: #6e9ed2;
 }
+
+
+#editPostForm, #createPostForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+#editPostForm #body, #createPostForm #body {
+    height: 100px;
+}
